@@ -19,6 +19,12 @@ public class DslContextFactory {
         DSLContext context;
         if ("PostgreSQL".equalsIgnoreCase(sqlDialect) || "Postgres".equalsIgnoreCase(sqlDialect)) {
             context = DSL.using(ds, SQLDialect.POSTGRES);
+        } else if ("PostgreSQL15".equalsIgnoreCase(sqlDialect) || "Postgres15".equalsIgnoreCase(sqlDialect)) {
+            context = DSL.using(ds, SQLDialect.POSTGRES_15);
+        } else if ("PostgreSQL14".equalsIgnoreCase(sqlDialect) || "Postgres14".equalsIgnoreCase(sqlDialect)) {
+            context = DSL.using(ds, SQLDialect.POSTGRES_14);
+        } else if ("PostgreSQL13".equalsIgnoreCase(sqlDialect) || "Postgres13".equalsIgnoreCase(sqlDialect)) {
+            context = DSL.using(ds, SQLDialect.POSTGRES_13);
         } else if ("PostgreSQL12".equalsIgnoreCase(sqlDialect) || "Postgres12".equalsIgnoreCase(sqlDialect)) {
             context = DSL.using(ds, SQLDialect.POSTGRES_12);
         } else if ("PostgreSQL11".equalsIgnoreCase(sqlDialect) || "Postgres11".equalsIgnoreCase(sqlDialect)) {
@@ -43,6 +49,10 @@ public class DslContextFactory {
             context = DSL.using(ds, SQLDialect.MYSQL_8_0);
         } else if ("MySQL8019".equalsIgnoreCase(sqlDialect) || "MySQL8.0.19".equalsIgnoreCase(sqlDialect)) {
             context = DSL.using(ds, SQLDialect.MYSQL_8_0_19);
+        } else if ("MySQL8020".equalsIgnoreCase(sqlDialect) || "MySQL8.0.20".equalsIgnoreCase(sqlDialect)) {
+            context = DSL.using(ds, SQLDialect.MYSQL_8_0_20);
+        } else if ("MySQL8031".equalsIgnoreCase(sqlDialect) || "MySQL8.0.31".equalsIgnoreCase(sqlDialect)) {
+            context = DSL.using(ds, SQLDialect.MYSQL_8_0_31);
         } else if ("MARIADB".equalsIgnoreCase(sqlDialect)) {
             context = DSL.using(ds, SQLDialect.MARIADB);
         } else if ("MARIADB10".equalsIgnoreCase(sqlDialect) || "MARIADB10.0".equalsIgnoreCase(sqlDialect)) {
@@ -57,9 +67,14 @@ public class DslContextFactory {
             context = DSL.using(ds, SQLDialect.MARIADB_10_4);
         } else if ("MARIADB10.5".equalsIgnoreCase(sqlDialect)) {
             context = DSL.using(ds, SQLDialect.MARIADB_10_5);
+        } else if ("MARIADB10.6".equalsIgnoreCase(sqlDialect)) {
+            context = DSL.using(ds, SQLDialect.MARIADB_10_6);
+        } else if ("MARIADB10.7".equalsIgnoreCase(sqlDialect)) {
+            context = DSL.using(ds, SQLDialect.MARIADB_10_7);
         } else if ("Oracle".equalsIgnoreCase(sqlDialect)) {
             context = DSL.using(ds, SQLDialect.DEFAULT);
         } else if ("ORACLE10G".equalsIgnoreCase(sqlDialect)) {
+            // Note: Deprecated for removal
             context = DSL.using(ds, SQLDialect.ORACLE10G);
         } else if ("ORACLE11G".equalsIgnoreCase(sqlDialect)) {
             context = DSL.using(ds, SQLDialect.ORACLE11G);
@@ -69,6 +84,10 @@ public class DslContextFactory {
             context = DSL.using(ds, SQLDialect.ORACLE18C);
         } else if ("ORACLE20C".equalsIgnoreCase(sqlDialect)) {
             context = DSL.using(ds, SQLDialect.ORACLE20C);
+        } else if ("ORACLE21C".equalsIgnoreCase(sqlDialect)) {
+            context = DSL.using(ds, SQLDialect.ORACLE21C);
+        } else if ("ORACLE23C".equalsIgnoreCase(sqlDialect)) {
+            context = DSL.using(ds, SQLDialect.ORACLE23C);
         } else if ("SQLServer".equalsIgnoreCase(sqlDialect)) {
             context = DSL.using(ds, SQLDialect.DEFAULT);
         } else if ("SQLSERVER2008".equalsIgnoreCase(sqlDialect)) {
@@ -81,6 +100,8 @@ public class DslContextFactory {
             context = DSL.using(ds, SQLDialect.SQLSERVER2016);
         } else if ("SQLSERVER2017".equalsIgnoreCase(sqlDialect)) {
             context = DSL.using(ds, SQLDialect.SQLSERVER2017);
+        } else if ("SQLSERVER2022".equalsIgnoreCase(sqlDialect)) {
+            context = DSL.using(ds, SQLDialect.SQLSERVER2022);
         } else if ("Derby".equalsIgnoreCase(sqlDialect)) {
             context = DSL.using(ds, SQLDialect.DERBY);
         } else if ("HSQLDB".equalsIgnoreCase(sqlDialect)) {
@@ -94,6 +115,9 @@ public class DslContextFactory {
         } else if ("Firebird30".equalsIgnoreCase(sqlDialect) || "Firebird3.0".equalsIgnoreCase(sqlDialect)
                 || "Firebird3".equalsIgnoreCase(sqlDialect)) {
             context = DSL.using(ds, SQLDialect.FIREBIRD_3_0);
+        } else if ("Firebird40".equalsIgnoreCase(sqlDialect) || "Firebird4.0".equalsIgnoreCase(sqlDialect)
+                || "Firebird4".equalsIgnoreCase(sqlDialect)) {
+            context = DSL.using(ds, SQLDialect.FIREBIRD_4_0);
         } else if ("SQLite".equalsIgnoreCase(sqlDialect)) {
             context = DSL.using(ds, SQLDialect.SQLITE);
         } else if ("SQLite325".equalsIgnoreCase(sqlDialect) || "SQLite3.25".equalsIgnoreCase(sqlDialect)) {
@@ -102,6 +126,12 @@ public class DslContextFactory {
             context = DSL.using(ds, SQLDialect.SQLITE_3_28);
         } else if ("SQLite330".equalsIgnoreCase(sqlDialect) || "SQLite3.30".equalsIgnoreCase(sqlDialect)) {
             context = DSL.using(ds, SQLDialect.SQLITE_3_30);
+        } else if ("SQLite338".equalsIgnoreCase(sqlDialect) || "SQLite3.38".equalsIgnoreCase(sqlDialect)) {
+            context = DSL.using(ds, SQLDialect.SQLITE_3_38);
+        } else if ("SQLite339".equalsIgnoreCase(sqlDialect) || "SQLite3.39".equalsIgnoreCase(sqlDialect)) {
+            context = DSL.using(ds, SQLDialect.SQLITE_3_39);
+        } else if ("SQLite340".equalsIgnoreCase(sqlDialect) || "SQLite3.40".equalsIgnoreCase(sqlDialect)) {
+            context = DSL.using(ds, SQLDialect.SQLITE_3_40);
         } else if ("ACCESS".equalsIgnoreCase(sqlDialect)) {
             context = DSL.using(ds, SQLDialect.ACCESS);
         } else if ("ACCESS2013".equalsIgnoreCase(sqlDialect)) {
@@ -122,6 +152,14 @@ public class DslContextFactory {
             context = DSL.using(ds, SQLDialect.AURORA_POSTGRES);
         } else if ("COCKROACHDB".equalsIgnoreCase(sqlDialect)) {
             context = DSL.using(ds, SQLDialect.COCKROACHDB);
+        } else if ("COCKROACHDB20".equalsIgnoreCase(sqlDialect)) {
+            context = DSL.using(ds, SQLDialect.COCKROACHDB_20);
+        } else if ("COCKROACHDB21".equalsIgnoreCase(sqlDialect)) {
+            context = DSL.using(ds, SQLDialect.COCKROACHDB_21);
+        } else if ("COCKROACHDB22".equalsIgnoreCase(sqlDialect)) {
+            context = DSL.using(ds, SQLDialect.COCKROACHDB_22);
+        } else if ("COCKROACHDB23".equalsIgnoreCase(sqlDialect)) {
+            context = DSL.using(ds, SQLDialect.COCKROACHDB_23);
         } else if ("DB2".equalsIgnoreCase(sqlDialect)) {
             context = DSL.using(ds, SQLDialect.DB2);
         } else if ("DB29".equalsIgnoreCase(sqlDialect)) {
@@ -135,6 +173,7 @@ public class DslContextFactory {
         } else if ("INFORMIX".equalsIgnoreCase(sqlDialect)) {
             context = DSL.using(ds, SQLDialect.INFORMIX);
         } else if ("INGRES".equalsIgnoreCase(sqlDialect)) {
+            // Note: Deprecated for removal
             context = DSL.using(ds, SQLDialect.INGRES);
         } else if ("MEMSQL".equalsIgnoreCase(sqlDialect)) {
             context = DSL.using(ds, SQLDialect.MEMSQL);
@@ -148,6 +187,14 @@ public class DslContextFactory {
             context = DSL.using(ds, SQLDialect.TERADATA);
         } else if ("VERTICA".equalsIgnoreCase(sqlDialect)) {
             context = DSL.using(ds, SQLDialect.VERTICA);
+        } else if ("DuckDB".equalsIgnoreCase(sqlDialect)) {
+            context = DSL.using(ds, SQLDialect.DUCKDB);
+        } else if ("Trino".equalsIgnoreCase(sqlDialect)) {
+            context = DSL.using(ds, SQLDialect.TRINO);
+        } else if ("YugabyteDB".equalsIgnoreCase(sqlDialect)) {
+            context = DSL.using(ds, SQLDialect.YUGABYTEDB);
+        } else if ("YugabyteDB29".equalsIgnoreCase(sqlDialect) || "YugabyteDB2.9".equalsIgnoreCase(sqlDialect)) {
+            context = DSL.using(ds, SQLDialect.YUGABYTEDB_2_9);
         } else {
             log.warnv("Undefined sqlDialect: {0}", sqlDialect);
             context = DSL.using(ds, SQLDialect.DEFAULT);

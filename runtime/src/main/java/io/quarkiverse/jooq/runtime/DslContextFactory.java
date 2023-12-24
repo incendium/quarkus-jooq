@@ -43,6 +43,12 @@ public class DslContextFactory {
             context = DSL.using(ds, SQLDialect.FIREBIRD);
         } else if ("SQLite".equalsIgnoreCase(sqlDialect)) {
             context = DSL.using(ds, SQLDialect.SQLITE);
+        } else if ("DuckDB".equalsIgnoreCase(sqlDialect)) {
+            context = DSL.using(ds, SQLDialect.DUCKDB);
+        } else if ("Trino".equalsIgnoreCase(sqlDialect)) {
+            context = DSL.using(ds, SQLDialect.TRINO);
+        } else if ("YugabyteDB".equalsIgnoreCase(sqlDialect)) {
+            context = DSL.using(ds, SQLDialect.YUGABYTEDB);
         } else {
             log.warnv("Undefined sqlDialect: {0}", sqlDialect);
             context = DSL.using(ds, SQLDialect.DEFAULT);
